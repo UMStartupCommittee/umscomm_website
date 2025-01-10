@@ -9,7 +9,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-lg md:text-xl text-foreground/80 mb-8">
-            Have questions about UMSCOM? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            Have questions about UMSCOM? We&rsquo;d love to hear from you. Send us a message and we&rsquo;ll respond as soon as possible.
           </p>
 
           {/* Contact Details */}

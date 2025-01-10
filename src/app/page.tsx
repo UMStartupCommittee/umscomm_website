@@ -1,6 +1,6 @@
 'use client'
-import { hygraphClient } from '@/lib/hygraph';
-import { HygraphResponse } from '@/types/hygraph';
+//import { hygraphClient } from '@/lib/hygraph';
+//import { HygraphResponse } from '@/types/hygraph';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
