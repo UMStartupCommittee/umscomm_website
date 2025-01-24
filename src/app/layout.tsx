@@ -23,8 +23,18 @@ const poppins = localFont({
       style: 'normal',
     },
     {
+      path: './fonts/Poppins/Poppins-ExtraBold.ttf',
+      weight: '800',
+      style: 'normal',
+    },
+    {
       path: './fonts/Poppins/Poppins-Bold.ttf',
       weight: '700',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Poppins/Poppins-SemiBold.ttf',
+      weight: '600',
       style: 'normal',
     },
     {
