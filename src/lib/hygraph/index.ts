@@ -17,7 +17,7 @@ import { Event } from '@/types/hygraph';
 
 export async function getEvents() {
   try {
-    const data = await hygraphClient.request<HygraphResponse<EventsResponse>>(
+    const data = await hygraphClient.request<EventsResponse>(
       GET_EVENTS,
       {},
       {
@@ -29,8 +29,10 @@ export async function getEvents() {
       throw new Error('No data received from Hygraph');
     }
 
+    console.log(data)
+
     // Map the response data to match your Event type
-    const eventData = data.data.upcomingEventsBanners.map((event: Event) => ({
+    const eventData = data.upcomingEventsBanners.map((event: Event) => ({
       title: event.title,
       eventDescription: event.eventDescription,
       eventDate: event.eventDate,
