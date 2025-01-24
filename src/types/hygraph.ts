@@ -1,10 +1,17 @@
-export interface Post {
-    id: string;
+export interface Event {
     title: string;
-    content: string;
-    slug: string;
+    eventDescription: string;
+    eventDate: string;
+    eventLocation: string;
+    eventTimeRange: string;
+    id: string;
 }
 
-export interface HygraphResponse {
-    posts: Post[];
+export interface EventsResponse {
+    upcomingEventsBanners: Event[];
+}
+
+export interface HygraphResponse<T> {
+    data: T;
+    errors?: string[];
 }
