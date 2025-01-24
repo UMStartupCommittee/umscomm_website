@@ -1,43 +1,60 @@
 'use client'
-import { hygraphClient } from '@/lib/hygraph';
+import { hygraphClient } from '@/lib/hygraph/client';
 import { HygraphResponse } from '@/types/hygraph';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import EventCard, { EventCardProps } from '@/components/EventCard';
+import { Event } from '@/types/hygraph';
+import { useEffect, useState } from 'react';
+import { getEvents } from '../lib/hygraph/index';
 
-const SampleEventData: EventCardProps[] = [
-  {
-    title: 'Startup Weekend UM',
-    description: '54-hour event where aspiring entrepreneurs pitch ideas and work in teams',
-    date: 'MAR 15, 2024',
-    onViewEvent: () => { },
-    href: '/events/startup-weekend'
-  },
-  {
-    title: 'Pitch Perfect Workshop',
-    description: 'Learn how to pitch your startup idea effectively to investors',
-    date: 'MAR 20, 2024',
-    onViewEvent: () => { },
-    href: '/events/pitch-workshop'
-  },
-  {
-    title: 'Founder Fireside Chat',
-    description: 'Interactive session with successful startup founders from Malaysia',
-    date: 'MAR 25, 2024',
-    onViewEvent: () => { },
-    href: '/events/fireside-chat'
-  },
-  {
-    title: 'Founder Fireside Chat',
-    description: 'Interactive session with successful startup founders from Malaysia',
-    date: 'MAR 25, 2024',
-    onViewEvent: () => { },
-    href: '/events/fireside-chat'
-  },
-];
+
+// const SampleEventData: EventCardProps[] = [
+//   {
+//     title: 'Startup Weekend UM',
+//     description: '54-hour event where aspiring entrepreneurs pitch ideas and work in teams',
+//     date: 'MAR 15, 2024',
+//     href: '/events/startup-weekend'
+//   },
+//   {
+//     title: 'Pitch Perfect Workshop',
+//     description: 'Learn how to pitch your startup idea effectively to investors',
+//     date: 'MAR 20, 2024',
+//     href: '/events/pitch-workshop'
+//   },
+//   {
+//     title: 'Founder Fireside Chat',
+//     description: 'Interactive session with successful startup founders from Malaysia',
+//     date: 'MAR 25, 2024',
+//     href: '/events/fireside-chat'
+//   },
+//   {
+//     title: 'Founder Fireside Chat',
+//     description: 'Interactive session with successful startup founders from Malaysia',
+//     date: 'MAR 25, 2024',
+//     href: '/events/fireside-chat'
+//   },
+// ];
 
 export default function Home() {
+  const [events, setEvents] = useState<Event[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchEvents() {
+      const { data, errors } = await getEvents();
+      if (errors?.length) {
+        console.log("Error", errors);
+        setError(errors[0]);
+      } else {
+        console.log("Fetched events:", data);
+        setEvents(data.eventData);
+      }
+    }
+    fetchEvents();
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -110,11 +127,23 @@ export default function Home() {
           </div>
 
           {/* Event Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div>
+            {error ? (<p>{error}</p>) : (
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                {/* {events.at(1)?.title} */}
+                {events.map((event, index) => (
+                  // event.title
+                  <EventCard key={index} {...event} />
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             {SampleEventData.map((event, index) => (
               <EventCard key={index} {...event} />
             ))}
-          </div>
+          </div> */}
 
           {/* Navigate to Events page button */}
           <div className='flex justify-start'>
