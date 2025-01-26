@@ -6,34 +6,7 @@ import EventCard from '@/components/EventCard';
 import { Event } from '@/types/hygraph';
 import { useEffect, useState } from 'react';
 import { getEvents } from '../lib/hygraph/index';
-
-
-// const SampleEventData: EventCardProps[] = [
-//   {
-//     title: 'Startup Weekend UM',
-//     description: '54-hour event where aspiring entrepreneurs pitch ideas and work in teams',
-//     date: 'MAR 15, 2024',
-//     href: '/events/startup-weekend'
-//   },
-//   {
-//     title: 'Pitch Perfect Workshop',
-//     description: 'Learn how to pitch your startup idea effectively to investors',
-//     date: 'MAR 20, 2024',
-//     href: '/events/pitch-workshop'
-//   },
-//   {
-//     title: 'Founder Fireside Chat',
-//     description: 'Interactive session with successful startup founders from Malaysia',
-//     date: 'MAR 25, 2024',
-//     href: '/events/fireside-chat'
-//   },
-//   {
-//     title: 'Founder Fireside Chat',
-//     description: 'Interactive session with successful startup founders from Malaysia',
-//     date: 'MAR 25, 2024',
-//     href: '/events/fireside-chat'
-//   },
-// ];
+import { filterEvents } from './events/page';
 
 export default function Home() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -52,6 +25,8 @@ export default function Home() {
     }
     fetchEvents();
   }, []);
+
+  const { upcomingEvents } = filterEvents(events);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -129,7 +104,7 @@ export default function Home() {
             {error ? (<p>{error}</p>) : (
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                 {/* {events.at(1)?.title} */}
-                {events.map((event, index) => (
+                {upcomingEvents.map((event, index) => (
                   // event.title
                   <EventCard key={index} {...event} />
                 ))}
@@ -180,36 +155,6 @@ export default function Home() {
               </p>
               <Link
                 href="/events/startup-weekend"
-                className="text-brand-primary hover:text-brand-primary/80 font-medium"
-              >
-                Learn more →
-              </Link>
-            </div>
-
-            {/* Event Card 2 *//*}
-            <div className="bg-background rounded-lg p-6 shadow-1">
-              <p className="text-brand-secondary font-medium mb-2">MAR 20, 2024</p>
-              <h3 className="text-xl font-bold mb-2">Pitch Perfect Workshop</h3>
-              <p className="text-foreground/80 mb-4">
-                Learn how to pitch your startup idea effectively to investors
-              </p>
-              <Link
-                href="/events/pitch-workshop"
-                className="text-brand-primary hover:text-brand-primary/80 font-medium"
-              >
-                Learn more →
-              </Link>
-            </div>
-
-            {/* Event Card 3 *//*}
-            <div className="bg-background rounded-lg p-6 shadow-1">
-              <p className="text-brand-secondary font-medium mb-2">MAR 25, 2024</p>
-              <h3 className="text-xl font-bold mb-2">Founder Fireside Chat</h3>
-              <p className="text-foreground/80 mb-4">
-                Interactive session with successful startup founders from Malaysia
-              </p>
-              <Link
-                href="/events/fireside-chat"
                 className="text-brand-primary hover:text-brand-primary/80 font-medium"
               >
                 Learn more →

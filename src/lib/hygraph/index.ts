@@ -20,9 +20,9 @@ export async function getEvents() {
     const data = await hygraphClient.request<EventsResponse>(
       GET_EVENTS,
       {},
-      {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_HYGRAPH_TOKEN}`,
-      }
+      // {
+      //   Authorization: `Bearer ${process.env.NEXT_PUBLIC_HYGRAPH_TOKEN}`,
+      // }
     );
 
     if (!data) {
