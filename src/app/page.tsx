@@ -6,7 +6,6 @@ import EventCard from '@/components/EventCard';
 import { Event } from '@/types/hygraph';
 import { useEffect, useState } from 'react';
 import { getEvents } from '../lib/hygraph/index';
-import { filterEvents } from './events/page';
 
 export default function Home() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -166,4 +165,14 @@ export default function Home() {
 
     </div>
   );
+}
+
+const filterEvents = (events: Event[]) => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  return {
+    upcomingEvents: events.filter(event => new Date(event.eventDate) >= today),
+    pastEvents: events.filter(event => new Date(event.eventDate) < today)
+  };
 }

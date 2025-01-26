@@ -73,7 +73,7 @@ export default function EventsPage() {
   );
 }
 
-export const filterEvents = (events: Event[]) => {
+const filterEvents = (events: Event[]) => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
