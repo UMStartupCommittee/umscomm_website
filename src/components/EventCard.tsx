@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from './ui/button';
 import Link from 'next/link';
 
 export interface EventCardProps {
@@ -11,7 +10,7 @@ export interface EventCardProps {
   id: string;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ title, eventDescription, eventDate, eventLocation, eventTimeRange, id }) => {
+const EventCard: React.FC<EventCardProps> = ({ title, eventDescription, id }) => {
   return (
     <div className="bg-background rounded-lg pr-6 shadow-1 grid grid-cols-6">
       {/* <p classNa</div>me="text-brand-secondary font-medium mb-2">{date}</p> */}

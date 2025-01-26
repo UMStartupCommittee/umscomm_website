@@ -1,6 +1,6 @@
 import { hygraphClient } from './client';
 import { GET_EVENTS } from './queries';
-import { EventsResponse, HygraphResponse } from '@/types/hygraph';
+import { EventsResponse } from '@/types/hygraph';
 import { Event } from '@/types/hygraph';
 
 // export async function getEvents(): Promise<HygraphResponse<EventResponse>> {

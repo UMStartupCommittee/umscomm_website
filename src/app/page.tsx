@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import EventCard, { EventCardProps } from '@/components/EventCard';
+import EventCard from '@/components/EventCard';
 import { Event } from '@/types/hygraph';
 import { useEffect, useState } from 'react';
 import { getEvents } from '../lib/hygraph/index';

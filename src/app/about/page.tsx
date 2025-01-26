@@ -5,7 +5,7 @@ export default function AboutPage() {
     <div className="bg-white text-gray-900">
       {/* Who are we? Section */}
       <section className="text-center py-16 px-8">
-        <h1 className="text-2xl leading-9 md:text-3xl md:leading-[48px] lg:text-4xl lg:leading-[60px] font-bold mb-8">Who are we?</h1>
+        <h1 className="text-2xl leading-9 md:text-3xl md:leading-[48px] lg:text-4xl lg:leading-[60px] font-semibold mb-8">Who are we?</h1>
         <p className="text-lg leading-7 md:text-xl md:leading-7 lg:text-2xl lg:leading-9 text-gray-700 font-semibold m-auto max-w-6xl">
           A community founded upon a commitment to <span className="text-brand-primary_negative font-bold">fostering entrepreneurial spirit </span>
           among students and providing them with the necessary support and resources to
