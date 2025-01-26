@@ -9,7 +9,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-brand-primary_negative bg-background/95 rounded-[2.5rem] shadow-md">
+    <header className="sticky top-0 z-50 w-full bg-brand-primary_negative bg-background/95 md:rounded-[2.5rem] shadow-md">
       <div className="container flex h-16 items-center justify-between mx-auto px-4">
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2">
@@ -81,46 +81,46 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden px-4 py-2 bg-background border-t border-border/40">
-          <div className="flex flex-col space-y-4 pb-4">
+        <nav className="md:hidden absolute w-full bg-brand-primary_negative/95 backdrop-blur-sm">
+          <div className="flex flex-col space-y-4 p-6">
             <Link
               href="/"
-              className="transition-colors text-white hover:text-white/80 py-2"
+              className="transition-colors text-white hover:text-white/80 py-2 text-lg"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/events"
-              className="transition-colors text-white hover:text-white/80 py-2"
+              className="transition-colors text-white hover:text-white/80 py-2 text-lg"
               onClick={() => setIsMenuOpen(false)}
             >
               Events
             </Link>
             <Link
               href="/about"
-              className="transition-colors text-white hover:text-white/80 py-2"
+              className="transition-colors text-white hover:text-white/80 py-2 text-lg"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="transition-colors text-white hover:text-white/80 py-2"
+              className="transition-colors text-white hover:text-white/80 py-2 text-lg"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
             <Link
               href="/collaborators"
-              className="transition-colors text-white hover:text-white/80 py-2"
+              className="transition-colors text-white hover:text-white/80 py-2 text-lg"
               onClick={() => setIsMenuOpen(false)}
             >
               Collaborators
             </Link>
             <Link
               href="/join-us"
-              className="transition-colors text-white hover:text-white/80 py-2"
+              className="transition-colors text-white hover:text-white/80 py-2 text-lg"
               onClick={() => setIsMenuOpen(false)}
             >
               Join Us
