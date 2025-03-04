@@ -1,6 +1,6 @@
 export const GET_EVENTS = `
 query GetEvents {
-  upcomingEventsBanners {
+  upcomingEventsBanners(first: 50) {
     title
     eventDate
     eventDescription
