@@ -15,7 +15,7 @@ export default function EventsPage() {
         console.log("Error", errors);
         setError(errors[0]);
       } else {
-        console.log("Fetched events:", data);
+        // console.log("Fetched events:", data);
         setEvents(data.eventData);
       }
     }

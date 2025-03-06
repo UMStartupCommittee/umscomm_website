@@ -41,7 +41,7 @@ export async function getEvents() {
       id: event.id
     }));
 
-    console.log('Hygraph data:', data);
+    // console.log('Hygraph data:', data);
     return {
       data: { eventData },
       errors: []
