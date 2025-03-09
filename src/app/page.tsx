@@ -4,26 +4,26 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import EventCard from '@/components/EventCard';
 import { Event } from '@/types/hygraph';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { getEvents } from '../lib/hygraph/index';
+import { useEvents } from '@/lib/context/EventsContext';
 
 export default function Home() {
-  const [events, setEvents] = useState<Event[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const { events, setEvents, isLoaded, setIsLoaded } = useEvents();
+  // const [events, setEvents] = useState<Event[]>([]);
 
   useEffect(() => {
     async function fetchEvents() {
       const { data, errors } = await getEvents();
       if (errors?.length) {
         console.log("Error", errors);
-        setError(errors[0]);
       } else {
         // console.log("Fetched events:", data);
         setEvents(data.eventData);
       }
     }
     fetchEvents();
-  }, []);
+  }, [isLoaded, setEvents, setIsLoaded]);
 
   const { upcomingEvents } = filterEvents(events);
 
@@ -100,11 +100,11 @@ export default function Home() {
 
           {/* Event Cards */}
           <div>
-            {error ? (<p>{error}</p>) : (
+            {events.length === 0 ? (
+              <p>Loading events...</p>
+            ) : (
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                {/* {events.at(1)?.title} */}
                 {upcomingEvents.map((event, index) => (
-                  // event.title
                   <EventCard key={index} {...event} />
                 ))}
               </div>

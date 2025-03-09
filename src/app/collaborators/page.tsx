@@ -29,6 +29,7 @@ export default function Collaborators() {
                 alt={collaborator.alt}
                 width={collaborator.width}
                 height={collaborator.height}
+                objectFit='cover'
                 className="hover:opacity-80 hover:scale-110 transition-opacity"
               />
             ))}

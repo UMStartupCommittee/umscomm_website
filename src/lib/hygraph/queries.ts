@@ -11,4 +11,15 @@ query GetEvents {
 }
 `;
 
-// Add other queries as needed
+export const GET_SINGLE_EVENT = `
+query GetSingleEvent($id: ID!) {
+  upcomingEventsBanner(where: {id: $id}) {
+    title
+    eventDate
+    eventDescription
+    eventLocation
+    eventTimeRange
+    id
+  }
+}
+`;

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ContactPage() {
   return (
@@ -23,7 +24,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-
       {/* Social media section */}
       <section className="flex flex-col items-center justify-center text-center py-16 px-8 bg-gray-100">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 text-center">Get social with us</h2>
@@ -37,9 +37,11 @@ export default function ContactPage() {
             aria-label="Instagram"
           >
             <div className='mb-3'>
-              <img
+              <Image
                 src="/images/skill-icons_instagram.png"
                 alt="Instagram"
+                width={96}
+                height={96}
                 className="h-24 w-24 group-hover:scale-110 transition-transform"
               />
             </div>
@@ -54,9 +56,11 @@ export default function ContactPage() {
             className="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors group"
           >
             <div className="mb-3">
-              <img
+              <Image
                 src="/images/skill-icons_discord.png"
                 alt="Discord"
+                width={96}
+                height={96}
                 className="h-24 w-24 group-hover:scale-110 transition-transform"
               />
             </div>
@@ -71,9 +75,11 @@ export default function ContactPage() {
             className="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors group"
           >
             <div className="mb-3">
-              <img
+              <Image
                 src="/images/skill-icons_linkedin.png"
                 alt="LinkedIn"
+                width={96}
+                height={96}
                 className="h-24 w-24 group-hover:scale-110 transition-transform"
               />
             </div>

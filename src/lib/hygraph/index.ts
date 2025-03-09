@@ -1,6 +1,6 @@
 import { hygraphClient } from './client';
-import { GET_EVENTS } from './queries';
-import { EventsResponse } from '@/types/hygraph';
+import { GET_EVENTS, GET_SINGLE_EVENT } from './queries';
+import { EventsResponse, SingleEventResponse } from '@/types/hygraph';
 import { Event } from '@/types/hygraph';
 
 // export async function getEvents(): Promise<HygraphResponse<EventResponse>> {
@@ -55,4 +55,36 @@ export async function getEvents() {
   }
 }
 
-// Export other functions as needed
+export async function getEventById(id: string) {
+  try {
+    const data = await hygraphClient.request<SingleEventResponse>(GET_SINGLE_EVENT, { id });
+
+    if (!data || !data.upcomingEventsBanner) {
+      throw new Error('No data received from Hygraph');
+    }
+
+    console.log("Hygrpah data", data)
+
+    // Map the response data to match your Event type
+    const event = {
+      title: data.upcomingEventsBanner.title,
+      eventDescription: data.upcomingEventsBanner.eventDescription,
+      eventDate: data.upcomingEventsBanner.eventDate,
+      eventLocation: data.upcomingEventsBanner.eventLocation,
+      eventTimeRange: data.upcomingEventsBanner.eventTimeRange,
+      id: data.upcomingEventsBanner.id
+    };
+
+    // console.log('Hygraph data:', data);
+    return {
+      data: { event },
+      errors: []
+    };
+  } catch (error) {
+    console.error('Hygraph fetch error:', error);
+    return {
+      data: { event: null },
+      errors: [(error as Error).message]
+    };
+  }
+}

@@ -11,7 +11,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '1',
     name: 'Collaborator 1',
-    logo: '/images/Amazon_Logo.jpeg',
+    logo: '/images/Grab_Logo.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 1 logo'
@@ -19,7 +19,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '2',
     name: 'Collaborator 2',
-    logo: '/images/Meta_logo.png',
+    logo: '/images/gdg_university_of_malaya_logo.jpeg',
     width: 200,
     height: 100,
     alt: 'Collaborator 2 logo'
@@ -27,7 +27,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '3',
     name: 'Collaborator 3',
-    logo: '/images/Microsoft_logo.png',
+    logo: '/images/JobStreet-logo.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 3 logo'
@@ -35,17 +35,17 @@ export const collaborators: Collaborator[] = [
   {
     id: '4',
     name: 'Collaborator 4',
-    logo: '/images/OpenAI_Logo.png',
+    logo: '/images/Ludius_Logo.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 4 logo'
   },
-  {
-    id: '5',
-    name: 'Collaborator 5',
-    logo: '/images/Samsung_Logo.png',
-    width: 200,
-    height: 100,
-    alt: 'Collaborator 5 logo'
-  }
+  // {
+  //   id: '5',
+  //   name: 'Collaborator 5',
+  //   logo: '/images/Samsung_Logo.png',
+  //   width: 200,
+  //   height: 100,
+  //   alt: 'Collaborator 5 logo'
+  // }
 ];

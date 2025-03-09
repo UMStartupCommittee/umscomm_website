@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { EventsProvider } from "@/lib/context/EventsContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -71,11 +72,15 @@ export default function RootLayout({
       <body
         className={` ${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <EventsProvider>
+
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+
+        </EventsProvider>
       </body>
     </html>
   );
