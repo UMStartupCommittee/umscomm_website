@@ -208,18 +208,6 @@ export default function CommitteeMembers() {
   )
 }
 
-interface ember {
-  name: string
-  role: string
-  bio: string
-  imageUrl: string
-  links?: {
-    linkedin?: string
-    twitter?: string
-    email?: string
-  }
-}
-
 function MemberCard({ member }: { member: Member }) {
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md">
