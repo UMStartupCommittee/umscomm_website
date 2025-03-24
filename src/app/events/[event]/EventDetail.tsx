@@ -17,6 +17,7 @@ interface EventDisplayData {
   date?: string;
   time?: string;
   location?: string;
+  registrationUrl?: string;
 }
 
 export default function EventDetail({ eventId }: EventDetailProps) {
@@ -40,6 +41,7 @@ export default function EventDetail({ eventId }: EventDetailProps) {
               date: contextEvent.eventDate,
               time: contextEvent.eventTimeRange,
               location: contextEvent.eventLocation,
+              registrationUrl: contextEvent.eventRegistrationLink,
             });
             setIsLoading(false);
             return;
@@ -61,6 +63,8 @@ export default function EventDetail({ eventId }: EventDetailProps) {
             date: event.eventDate,
             time: event.eventTimeRange,
             location: event.eventLocation,
+            registrationUrl: event.eventRegistrationLink,
+
           });
         }
       } catch (error) {
@@ -86,12 +90,24 @@ export default function EventDetail({ eventId }: EventDetailProps) {
     <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Event Header with Image */}
-        <div className="relative h-64 md:h-96">
+        <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600" />
           <div className="absolute inset-0 bg-black bg-opacity-40" />
-          <div className="absolute bottom-0 left-0 p-6 text-white">
-            <h1 className="text-3xl md:text-4xl font-bold">{eventData.title}</h1>
-            <p className="mt-2 text-lg text-gray-200">{eventData.description}</p>
+          <div className="relative z-10 p-8 md:p-12 lg:p-16 text-white">
+            <h1 className="text-3xl md:text-4xl font-bold mb-3">{eventData.title}</h1>
+            {/* <p className="mt-2 text-lg text-gray-200">{eventData.description}</p> */}
+            {eventData.registrationUrl && (
+              <div className="mt-2">
+                <a
+                  href={eventData.registrationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-brand-secondary hover:bg-brand-secondary-dark text-black font-medium py-2 px-6 rounded-md transition duration-200 shadow-md hover:bg-brand-secondary/90"
+                >
+                  Register Now
+                </a>
+              </div>
+            )}
           </div>
         </div>
 

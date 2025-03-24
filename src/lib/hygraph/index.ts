@@ -29,7 +29,7 @@ export async function getEvents() {
       throw new Error('No data received from Hygraph');
     }
 
-    console.log(data)
+    // console.log(data)
 
     // Map the response data to match your Event type
     const eventData = data.upcomingEventsBanners.map((event: Event) => ({
@@ -38,7 +38,9 @@ export async function getEvents() {
       eventDate: event.eventDate,
       eventLocation: event.eventLocation,
       eventTimeRange: event.eventTimeRange,
-      id: event.id
+      id: event.id,
+      eventRegistrationLink: event.eventRegistrationLink
+
     }));
 
     // console.log('Hygraph data:', data);
@@ -63,7 +65,7 @@ export async function getEventById(id: string) {
       throw new Error('No data received from Hygraph');
     }
 
-    console.log("Hygrpah data", data)
+    // console.log("Hygrpah data", data)
 
     // Map the response data to match your Event type
     const event = {
@@ -72,7 +74,8 @@ export async function getEventById(id: string) {
       eventDate: data.upcomingEventsBanner.eventDate,
       eventLocation: data.upcomingEventsBanner.eventLocation,
       eventTimeRange: data.upcomingEventsBanner.eventTimeRange,
-      id: data.upcomingEventsBanner.id
+      id: data.upcomingEventsBanner.id,
+      eventRegistrationLink: data.upcomingEventsBanner.eventRegistrationLink
     };
 
     // console.log('Hygraph data:', data);

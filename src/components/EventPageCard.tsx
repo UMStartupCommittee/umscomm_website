@@ -9,9 +9,10 @@ export interface EventPageCardProps {
   eventTimeRange: string;
   id: string;
   showButton?: boolean;
+  eventRegistrationLink?: string;
 }
 
-const EventPageCard: React.FC<EventPageCardProps> = ({ title, eventDescription, eventDate, eventLocation, eventTimeRange, showButton = true }) => {
+const EventPageCard: React.FC<EventPageCardProps> = ({ title, eventDescription, eventDate, eventLocation, eventTimeRange, showButton = true, eventRegistrationLink }) => {
   return (
     <div className="bg-background rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:border-brand-primary/20">
       <h3 className="text-xl lg:text-2xl font-bold mb-4">{title}</h3>
@@ -27,9 +28,26 @@ const EventPageCard: React.FC<EventPageCardProps> = ({ title, eventDescription, 
           <strong>Venue:</strong> {eventLocation}
         </p>
       </div>
-      {showButton && (
-        <Button className="text-brand-primary hover:bg-brand-secondary/70">
-          Register now
+      {showButton && eventRegistrationLink && (
+        <Button
+          asChild
+          className="text-brand-primary hover:bg-brand-secondary/70"
+        >
+          <a
+            href={eventRegistrationLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register now
+          </a>
+        </Button>
+      )}
+      {showButton && !eventRegistrationLink && (
+        <Button
+          className="text-brand-primary hover:bg-brand-secondary/70"
+          disabled
+        >
+          Registration coming soon
         </Button>
       )}
     </div>

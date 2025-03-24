@@ -20,6 +20,7 @@ export default function Home() {
       } else {
         // console.log("Fetched events:", data);
         setEvents(data.eventData);
+        console.log("Events fetched:", data.eventData);
       }
     }
     fetchEvents();

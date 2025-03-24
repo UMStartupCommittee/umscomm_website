@@ -7,6 +7,7 @@ query GetEvents {
     eventLocation
     eventTimeRange
     id
+    eventRegistrationLink
   }
 }
 `;
@@ -20,6 +21,7 @@ query GetSingleEvent($id: ID!) {
     eventLocation
     eventTimeRange
     id
+    eventRegistrationLink
   }
 }
 `;

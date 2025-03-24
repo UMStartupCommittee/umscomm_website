@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { socialLinks } from '@/data/socialLinks';
 
 export default function Footer() {
   return (
@@ -14,7 +15,7 @@ export default function Footer() {
           <div className="flex items-center space-x-4">
             {/* Email */}
             <Link
-              href="mailto:contact@umscom.com"
+              href={`mailto:${socialLinks.email}`}
               className="text-foreground/80 hover:text-brand-primary transition-colors"
               aria-label="Email"
             >
@@ -25,7 +26,7 @@ export default function Footer() {
 
             {/* Discord */}
             <Link
-              href="https://discord.gg/tqSsd3QT"
+              href={socialLinks.discord || '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/80 hover:text-brand-primary transition-colors"
@@ -38,7 +39,7 @@ export default function Footer() {
 
             {/* Instagram */}
             <Link
-              href="https://www.instagram.com/umscomm/"
+              href={socialLinks.instagram || '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/80 hover:text-brand-primary transition-colors"
@@ -51,7 +52,7 @@ export default function Footer() {
 
             {/* LinkedIn */}
             <Link
-              href="https://www.linkedin.com/company/umscom/"
+              href={socialLinks.linkedin || '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/80 hover:text-brand-primary transition-colors"

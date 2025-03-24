@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { socialLinks } from '@/data/socialLinks';
 
 export default function ContactPage() {
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Hero Section */}
@@ -16,7 +18,7 @@ export default function ContactPage() {
           <p className="text-lg mb-6">Email us at</p>
           <p className="font-semibold text-lg">umstartupcommittee@gmail.com</p>
           <a
-            href="mailto:umstartupcommittee@gmail.com"
+            href="`mailto:${socialLinks.email}`} "
             className="inline-block mt-6 px-6 py-3 bg-yellow-400 text-black font-medium rounded-md shadow-md hover:bg-yellow-500"
           >
             Send us an email
@@ -30,7 +32,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Instagram */}
           <Link
-            href="https://instagram.com/umscomm"
+            href={socialLinks.instagram || '#'}
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors group"
@@ -50,7 +52,7 @@ export default function ContactPage() {
 
           {/* Discord */}
           <Link
-            href="https://discord.gg/3r5s92AAyV"
+            href={socialLinks.discord || '#'}
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors group"
@@ -69,7 +71,7 @@ export default function ContactPage() {
 
           {/* LinkedIn */}
           <Link
-            href="https://www.linkedin.com/company/umscom/"
+            href={socialLinks.linkedin || '#'}
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors group"

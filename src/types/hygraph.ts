@@ -5,6 +5,7 @@ export interface Event {
     eventLocation: string;
     eventTimeRange: string;
     id: string;
+    eventRegistrationLink?: string;
 }
 
 export interface EventsResponse {
@@ -19,6 +20,7 @@ export interface SingleEventResponse {
         eventLocation: string;
         eventTimeRange: string;
         id: string;
+        eventRegistrationLink?: string
     };
 }
 
