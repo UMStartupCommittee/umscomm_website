@@ -18,7 +18,7 @@ export default function ContactPage() {
           <p className="text-lg mb-6">Email us at</p>
           <p className="font-semibold text-lg">umstartupcommittee@gmail.com</p>
           <a
-            href="`mailto:${socialLinks.email}`} "
+            href="mailto:umstartupcommittee@gmail.com"
             className="inline-block mt-6 px-6 py-3 bg-yellow-400 text-black font-medium rounded-md shadow-md hover:bg-yellow-500"
           >
             Send us an email
