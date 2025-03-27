@@ -81,6 +81,14 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: [
+      {
+        url: '/favicon.jpg',
+        type: 'image/jpeg',
+      }
+    ]
+  }
 };
 
 export default function RootLayout({
@@ -90,6 +98,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="umscom" content="UMSCOM" />
+      </head>
       <body
         className={` ${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >

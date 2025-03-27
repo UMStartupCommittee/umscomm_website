@@ -156,8 +156,10 @@ export default function EventDetail({ eventId }: EventDetailProps) {
                     </div>
                   </div>
 
-                  <div className="flex items-start">
-                    <MapPin className="w-5 h-5 text-blue-600 mt-0.5 mr-3" />
+                  <div className="flex">
+                    <div className="flex-shrink-0 pt-1">
+                      <MapPin className="w-5 h-5 text-blue-600 mr-3" />
+                    </div>
                     <div>
                       <div className="font-medium">Location</div>
                       <div className="text-gray-600">{eventData.location}</div>
