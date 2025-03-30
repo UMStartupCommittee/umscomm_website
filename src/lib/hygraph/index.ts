@@ -1,7 +1,6 @@
 import { hygraphClient } from './client';
 import { GET_EVENTS, GET_PAST_EVENTS_PAGINATED, GET_SINGLE_EVENT, GET_UPCOMING_EVENTS, GET_UPCOMING_EVENTS_PAGINATED } from './queries';
 import { EventsResponse, ExtendedEventsResponse, SingleEventResponse } from '@/types/hygraph';
-import { Event } from '@/types/hygraph';
 
 // export async function getEvents(): Promise<HygraphResponse<EventResponse>> {
 //   try {
@@ -134,7 +133,7 @@ export async function getUpcomingEventsPaginated(page = 1, perPage = 3) {
     }
 
     const totalCount = data.upcomingEventsBannersConnection.aggregate.count;
-    const hasMore = skip + perPage < totalCount;
+    // const hasMore = skip + perPage < totalCount;
 
     return {
       data: {

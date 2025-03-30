@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Calendar, Target } from 'lucide-react';
-import { getEvents, getUpcomingEvents } from '../lib/hygraph/index';
+import { getUpcomingEvents } from '../lib/hygraph/index';
 import HeroSection from '@/app/HeroSection';
 import HomeEventsSection from '@/app/HomeEventsSection';
 

@@ -1,6 +1,6 @@
 'use client'
 import EventPageCard from "@/components/EventPageCard";
-import { getEvents, getUpcomingEventsPaginated, getPastEventsPaginated } from "@/lib/hygraph/index";
+import { getUpcomingEventsPaginated, getPastEventsPaginated } from "@/lib/hygraph/index";
 import { useEffect, useState } from "react";
 import { Event } from "@/types/hygraph";
 import { Button } from "@/components/ui/button";
