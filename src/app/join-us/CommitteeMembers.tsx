@@ -48,7 +48,7 @@ export default function CommitteeMembers() {
                 <div className="flex justify-center items-center space-x-6 text-sm text-muted-foreground mt-8">
                   <div className="flex items-center space-x-1">
                     <Users className="h-4 w-4" />
-                    <span>20+ Members</span>
+                    <span>500+ Members</span>
                   </div>
                   <div className="flex items-center space-x-1">
                     <Calendar className="h-4 w-4" />
