@@ -59,7 +59,7 @@ export default function AboutPage() {
       <section className="py-16 px-8">
         <h2 className="text-center text-2xl leading-9  md:text-3xl md:leading-[48px] lg:text-4xl lg:leading-[60px] font-semibold mb-8">Our Location</h2>
         <div className="flex justify-center text-base lg:text-lg lg:leading-relaxed mb-8">
-          <p className="font-semibold">📍 Address: <span className="font-normal"> Faculty of Computer Science and Information Technology, University of Malaya</span></p>
+          <p className="font-semibold">📍 Address: <span className="font-normal"> Faculty of Computer Science and Information Technology, Universiti Malaya</span></p>
         </div>
         <div className="items-center justify-center flex">
           <iframe
