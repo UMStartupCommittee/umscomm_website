@@ -1,6 +1,6 @@
 import { hygraphClient } from './client';
-import { GET_EVENTS, GET_SINGLE_EVENT } from './queries';
-import { EventsResponse, SingleEventResponse } from '@/types/hygraph';
+import { GET_EVENTS, GET_PAST_EVENTS_PAGINATED, GET_SINGLE_EVENT, GET_UPCOMING_EVENTS, GET_UPCOMING_EVENTS_PAGINATED } from './queries';
+import { EventsResponse, ExtendedEventsResponse, SingleEventResponse } from '@/types/hygraph';
 import { Event } from '@/types/hygraph';
 
 // export async function getEvents(): Promise<HygraphResponse<EventResponse>> {
@@ -32,16 +32,7 @@ export async function getEvents() {
     // console.log(data)
 
     // Map the response data to match your Event type
-    const eventData = data.upcomingEventsBanners.map((event: Event) => ({
-      title: event.title,
-      eventDescription: event.eventDescription,
-      eventDate: event.eventDate,
-      eventLocation: event.eventLocation,
-      eventTimeRange: event.eventTimeRange,
-      id: event.id,
-      eventRegistrationLink: event.eventRegistrationLink
-
-    }));
+    const eventData = data.upcomingEventsBanners;
 
     // console.log('Hygraph data:', data);
     return {
@@ -87,6 +78,103 @@ export async function getEventById(id: string) {
     console.error('Hygraph fetch error:', error);
     return {
       data: { event: null },
+      errors: [(error as Error).message]
+    };
+  }
+}
+
+export async function getUpcomingEvents() {
+  try {
+    const today = new Date().toISOString();
+    const data = await hygraphClient.request<EventsResponse>(GET_UPCOMING_EVENTS, { today });
+
+    if (!data || !data.upcomingEventsBanners) {
+      throw new Error('No data received from Hygraph');
+    }
+
+    // const event = data.upcomingEventsBanners.map((event: Event) => ({
+    //   title: event.title,
+    //   eventDescription: event.eventDescription,
+    //   eventDate: event.eventDate,
+    //   eventLocation: event.eventLocation,
+    //   eventTimeRange: event.eventTimeRange,
+    //   id: event.id,
+    //   eventRegistrationLink: event.eventRegistrationLink,
+    //   date: event.date
+    // }));
+    const event = data.upcomingEventsBanners;
+
+    // console.log('Hygraph data:', data);
+    return {
+      data: { event },
+      errors: []
+    };
+  } catch (error) {
+    console.error('Hygraph fetch error:', error);
+    return {
+      data: { event: null },
+      errors: [(error as Error).message]
+    };
+  }
+}
+
+export async function getUpcomingEventsPaginated(page = 1, perPage = 3) {
+  try {
+    const today = new Date().toISOString();
+    const skip = (page - 1) * perPage;
+
+    const data = await hygraphClient.request<ExtendedEventsResponse>(GET_UPCOMING_EVENTS_PAGINATED, {
+      today,
+      skip,
+      first: perPage
+    });
+
+    if (!data || !data.upcomingEventsBanners) {
+      throw new Error('No data received from Hygraph');
+    }
+
+    const totalCount = data.upcomingEventsBannersConnection.aggregate.count;
+    const hasMore = skip + perPage < totalCount;
+
+    return {
+      data: {
+        events: data.upcomingEventsBanners,
+        totalCount
+      },
+      errors: []
+    };
+  } catch (error) {
+    console.error('Hygraph fetch error:', error);
+    return {
+      data: { events: [], totalCount: 0 },
+      errors: [(error as Error).message]
+    };
+  }
+}
+
+export async function getPastEventsPaginated(page = 1, perPage = 3) {
+  try {
+    const today = new Date().toISOString();
+    const skip = (page - 1) * perPage;
+
+    const data = await hygraphClient.request<EventsResponse>(GET_PAST_EVENTS_PAGINATED, {
+      today,
+      skip,
+      first: perPage
+    });
+
+    if (!data || !data.upcomingEventsBanners) {
+      throw new Error('No data received from Hygraph');
+    }
+
+    return {
+      data: { events: data.upcomingEventsBanners },
+      errors: []
+    };
+  } catch (error) {
+    console.error('Hygraph fetch error:', error);
+    return {
+      data: { events: [] },
       errors: [(error as Error).message]
     };
   }

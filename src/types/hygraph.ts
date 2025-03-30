@@ -6,10 +6,19 @@ export interface Event {
     eventTimeRange: string;
     id: string;
     eventRegistrationLink?: string;
+    date: Date;
 }
 
 export interface EventsResponse {
     upcomingEventsBanners: Event[];
+}
+
+export interface ExtendedEventsResponse extends EventsResponse {
+    upcomingEventsBannersConnection: {
+        aggregate: {
+            count: number;
+        }
+    };
 }
 
 export interface SingleEventResponse {
@@ -21,6 +30,7 @@ export interface SingleEventResponse {
         eventTimeRange: string;
         id: string;
         eventRegistrationLink?: string
+        date: Date;
     };
 }
 
