@@ -4,6 +4,9 @@ import { ArrowRight, Users, Calendar, Target } from 'lucide-react';
 import { getUpcomingEvents } from '../lib/hygraph/index';
 import HeroSection from '@/app/HeroSection';
 import HomeEventsSection from '@/app/HomeEventsSection';
+// import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards';
+import { collaborators } from '@/data/collaborators';
+import Image from 'next/image';
 
 export default async function Home() {
   // Server-side data fetching
@@ -18,6 +21,50 @@ export default async function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Now a client component */}
       <HeroSection />
+
+
+      {/* Collaborators/Partners Logo Section */}
+      <section className="bg-gray-50 py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold font-poppins mb-4">Our Collaborators</h2>
+          <p className="text-center text-foreground/70 max-w-2xl mx-auto mb-8">
+            We collaborated with leading organizations to provide the best opportunities for our members
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center">
+            {collaborators.map((collaborator) => (
+              <div
+                key={collaborator.id}
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center w-full h-40 md:h-48"
+              >
+                <Image
+                  src={collaborator.logo}
+                  alt={collaborator.alt || collaborator.name}
+                  width={collaborator.width}
+                  height={collaborator.height}
+                  className="object-contain max-h-full max-w-full"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="bg-gray-50 py-16">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold font-poppins mb-4">Our Partners</h2>
+          <p className="text-center text-foreground/70 max-w-2xl mx-auto mb-8">
+            We collaborated with leading organizations to provide the best opportunities for our members
+          </p>
+          <InfiniteMovingCards
+            items={collaborators}
+            direction="left"
+            speed="normal"
+            pauseOnHover={true}
+            className="bg-white rounded-xl shadow-sm p-4 border border-gray-100"
+          />
+        </div>
+      </section> */}
 
       {/* Features Section - Can be server rendered */}
       <section className="bg-brand-primary_negative py-24 px-4">
