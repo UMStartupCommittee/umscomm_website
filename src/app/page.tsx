@@ -12,6 +12,7 @@ export default async function Home() {
   // Server-side data fetching
   // const { data } = await getEvents();
   const { data } = await getUpcomingEvents();
+  console.log('Upcoming events data:', data);
   const upcomingEvents = data.event || [];
   // console.log('Events:', events);
   // const { upcomingEvents } = filterEvents(events);
