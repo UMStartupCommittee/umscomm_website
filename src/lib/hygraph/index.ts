@@ -85,7 +85,7 @@ export async function getEventById(id: string) {
 export async function getUpcomingEvents() {
   try {
     const today = new Date().toISOString();
-    console.log('Today:', today);
+    // console.log('Today:', today);
     const data = await hygraphClient.request<EventsResponse>(GET_UPCOMING_EVENTS, { today });
 
     if (!data || !data.upcomingEventsBanners) {

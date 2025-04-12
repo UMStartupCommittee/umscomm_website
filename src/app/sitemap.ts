@@ -5,7 +5,7 @@ export default async function sitemap() {
   const events = data.eventData || []
 
   const eventUrls = events.map((event) => ({
-    url: `https://umscomm-website.vercel.app/events/${event.id}`,
+    url: `https://umscomm.vercel.app/events/${event.id}`,
     // lastModified: new Date(event.updatedAt || event.createdAt || new Date()),
   }))
 
@@ -15,7 +15,7 @@ export default async function sitemap() {
     '/about',
     '/join-us',
   ].map((route) => ({
-    url: `https://umscomm-website.vercel.app${route}`,
+    url: `https://umscomm.vercel.app${route}`,
     lastModified: new Date(),
   }))
 

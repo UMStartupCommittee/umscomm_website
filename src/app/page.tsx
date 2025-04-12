@@ -8,11 +8,13 @@ import HomeEventsSection from '@/app/HomeEventsSection';
 import { collaborators } from '@/data/collaborators';
 import Image from 'next/image';
 
+export const revalidate = 300;
+
 export default async function Home() {
   // Server-side data fetching
   // const { data } = await getEvents();
   const { data } = await getUpcomingEvents();
-  console.log('Upcoming events data:', data);
+  // console.log('Upcoming events data:', data);
   const upcomingEvents = data.event || [];
   // console.log('Events:', events);
   // const { upcomingEvents } = filterEvents(events);

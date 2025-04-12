@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_MY',
-    url: 'https://umscomm-website.vercel.app',
+    url: 'https://umscomm.vercel.app',
     siteName: 'UMSCOM',
     title: 'UMSCOM - Igniting the Entrepreneurial Spirit',
     description: 'Join the largest startup community in Universiti Malaya and transform your innovative ideas into impactful ventures.',
