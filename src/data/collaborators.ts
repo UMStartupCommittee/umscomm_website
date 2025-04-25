@@ -64,4 +64,28 @@ export const collaborators: Collaborator[] = [
     height: 100,
     alt: 'Collaborator 7 logo'
   },
+  {
+    id: '8',
+    name: 'Collaborator 8',
+    logo: '/images/Ignite Asia Poster.png',
+    width: 300,
+    height: 200,
+    alt: 'Collaborator 8 logo'
+  },
+  {
+    id: '9',
+    name: 'Collaborator 9',
+    logo: '/images/RHB logo.png',
+    width: 200,
+    height: 100,
+    alt: 'Collaborator 9 logo'
+  },
+  {
+    id: '10',
+    name: 'Collaborator 10',
+    logo: '/images/unilah logo.png',
+    width: 200,
+    height: 100,
+    alt: 'Collaborator 10 logo'
+  },
 ];
