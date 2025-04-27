@@ -11,7 +11,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '1',
     name: 'Collaborator 1',
-    logo: '/images/Ant International.png',
+    logo: '/images/amd-logo.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 1 logo'
@@ -19,7 +19,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '2',
     name: 'Collaborator 2',
-    logo: '/images/Grab_Logo.png',
+    logo: '/images/Ant International.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 2 logo'
@@ -27,7 +27,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '3',
     name: 'Collaborator 3',
-    logo: '/images/JobStreet-logo.png',
+    logo: '/images/Grab_Logo.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 3 logo'
@@ -35,7 +35,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '4',
     name: 'Collaborator 4',
-    logo: '/images/Embedded LLM.png',
+    logo: '/images/JobStreet-logo.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 4 logo'
@@ -43,7 +43,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '5',
     name: 'Collaborator 5',
-    logo: '/images/Ludius_Logo.png',
+    logo: '/images/Embedded LLM.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 5 logo'
@@ -51,7 +51,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '6',
     name: 'Collaborator 6',
-    logo: '/images/gdg_university_of_malaya_logo.jpeg',
+    logo: '/images/RHB logo.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 6 logo'
@@ -59,7 +59,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '7',
     name: 'Collaborator 7',
-    logo: '/images/Engineering Society.png',
+    logo: '/images/gdg_university_of_malaya_logo.jpeg',
     width: 200,
     height: 100,
     alt: 'Collaborator 7 logo'
@@ -67,7 +67,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '8',
     name: 'Collaborator 8',
-    logo: '/images/Ignite Asia Poster.png',
+    logo: '/images/Engineering Society.png',
     width: 300,
     height: 200,
     alt: 'Collaborator 8 logo'
@@ -75,7 +75,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '9',
     name: 'Collaborator 9',
-    logo: '/images/RHB logo.png',
+    logo: '/images/Ignite Asia Poster.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 9 logo'
@@ -83,9 +83,33 @@ export const collaborators: Collaborator[] = [
   {
     id: '10',
     name: 'Collaborator 10',
-    logo: '/images/unilah logo.png',
+    logo: '/images/Ludius_Logo.png',
     width: 200,
     height: 100,
     alt: 'Collaborator 10 logo'
   },
+  {
+    id: '11',
+    name: 'Collaborator 11',
+    logo: '/images/UMCIE.png',
+    width: 200,
+    height: 100,
+    alt: 'Collaborator 11 logo'
+  },
+  {
+    id: '12',
+    name: 'Collaborator 12',
+    logo: '/images/unilah logo.png',
+    width: 200,
+    height: 100,
+    alt: 'Collaborator 12 logo'
+  },
+  // {
+  //   id: '13',
+  //   name: 'Collaborator 13',
+  //   logo: '/images/vida-logo.png',
+  //   width: 200,
+  //   height: 100,
+  //   alt: 'Collaborator 13 logo'
+  // },
 ];

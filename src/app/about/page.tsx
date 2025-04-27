@@ -62,13 +62,21 @@ export default function AboutPage() {
           <p className="font-semibold">📍 Address: <span className="font-normal"> Faculty of Computer Science and Information Technology, Universiti Malaya</span></p>
         </div>
         <div className="items-center justify-center flex">
-          <iframe
+          {/* <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8731716836314!2d101.65069480000001!3d3.1282134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49720ec81b9b%3A0x58d63e7d8749e9d8!2sFaculty%20of%20Computer%20Science%20and%20Information%20Technology!5e0!3m2!1sen!2sjp!4v1737705182081!5m2!1sen!2sjp"
             width="1500"
             height="450"
             title="UM Faculty of Computer Science and Information Technology"
             referrerPolicy="no-referrer-when-downgrade">
-          </iframe>
+          </iframe> */}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1092.6881877662743!2d101.66019227486692!3d3.1240271898291327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4977c125f92d%3A0xceea3335499c8c5a!2sUniversity%20of%20Malaya%20Centre%20of%20Innovation%20%26%20Commercialization%20(UMCIC)!5e1!3m2!1sen!2smy!4v1745575048933!5m2!1sen!2smy"
+            width="1500"
+            height="450"
+            allowFullScreen
+            title="UMCIE"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
         {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div>
