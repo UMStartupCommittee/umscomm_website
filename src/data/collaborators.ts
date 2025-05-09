@@ -11,7 +11,7 @@ export const collaborators: Collaborator[] = [
   {
     id: '1',
     name: 'Collaborator 1',
-    logo: '/images/amd-logo.png',
+    logo: '/images/AMD-Logo (1).png',
     width: 200,
     height: 100,
     alt: 'Collaborator 1 logo'
@@ -99,17 +99,41 @@ export const collaborators: Collaborator[] = [
   {
     id: '12',
     name: 'Collaborator 12',
-    logo: '/images/unilah logo.png',
+    logo: '/images/unilah.jpg',
     width: 200,
     height: 100,
     alt: 'Collaborator 12 logo'
   },
+  {
+    id: '13',
+    name: 'Collaborator 13',
+    logo: '/images/vida_logo (1).png',
+    width: 200,
+    height: 200,
+    alt: 'Collaborator 13 logo'
+  },
+  {
+    id: '14',
+    name: 'Collaborator 14',
+    logo: '/images/MoneyLion_Logo.png',
+    width: 200,
+    height: 100,
+    alt: 'Collaborator 14 logo'
+  },
+  {
+    id: '15',
+    name: 'Collaborator 15',
+    logo: '/images/WOODS LOGO.jpg',
+    width: 200,
+    height: 100,
+    alt: 'Collaborator 15 logo'
+  },
   // {
-  //   id: '13',
-  //   name: 'Collaborator 13',
-  //   logo: '/images/vida-logo.png',
+  //   id: '16',
+  //   name: 'Collaborator 16',
+  //   logo: '/images/UMCIE.png',
   //   width: 200,
   //   height: 100,
-  //   alt: 'Collaborator 13 logo'
+  //   alt: 'Collaborator 16 logo'
   // },
 ];
